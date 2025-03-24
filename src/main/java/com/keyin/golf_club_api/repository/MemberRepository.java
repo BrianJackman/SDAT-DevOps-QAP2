@@ -1,10 +1,11 @@
-package main.java.com.keyin.golf_club_api.repository;
+package com.keyin.golf_club_api.repository;
 
-import main.java.com.keyin.golf_club_api.model.Member;
+import com.keyin.golf_club_api.model.Member;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.time.LocalDate;
 
 @Repository
 public interface MemberRepository extends JpaRepository<Member, Long> {

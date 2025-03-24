@@ -1,7 +1,7 @@
-package main.java.com.keyin.golf_club_api.service;
+package com.keyin.golf_club_api.service;
 
-import main.java.com.keyin.golf_club_api.model.Member;
-import main.java.com.keyin.golf_club_api.repository.MemberRepository;
+import com.keyin.golf_club_api.model.Member;
+import com.keyin.golf_club_api.repository.MemberRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
