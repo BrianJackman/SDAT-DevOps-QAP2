@@ -1,3 +1,4 @@
+# filepath: /Users/student/Documents/SDAT Dev Ops/QAP2/golf-club-api/docker-compose.yml
 version: '3.8'
 
 services:
@@ -9,16 +10,26 @@ services:
       MYSQL_USER: MySql_Test
       MYSQL_PASSWORD: MySQLpass48!
     ports:
-      - "3306:3306"
+      - "3307:3306"
     volumes:
       - mysql-data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD-SHELL", "mysqladmin ping -h localhost -u root --password=MySQLpass48!"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
 
   app:
     build: .
     ports:
       - "8080:8080"
     depends_on:
-      - mysql
+      mysql:
+        condition: service_healthy
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/golf_club_db
+      SPRING_DATASOURCE_USERNAME: MySql_Test
+      SPRING_DATASOURCE_PASSWORD: MySQLpass48!
 
 volumes:
   mysql-data:
