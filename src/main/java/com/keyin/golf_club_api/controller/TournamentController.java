@@ -25,6 +25,11 @@ public class TournamentController {
         return tournamentService.getAllTournaments();
     }
 
+    @PostMapping("/{tournamentId}/members")
+    public void addMemberToTournament(@PathVariable Long tournamentId, @RequestBody Long memberId) {
+        tournamentService.addMemberToTournament(tournamentId, memberId);
+    }
+
     @GetMapping("/search")
     public List<Tournament> searchTournaments(
             @RequestParam(required = false) LocalDate startDate,
@@ -38,8 +43,8 @@ public class TournamentController {
         }
     }
 
-    @GetMapping("/{id}/members")
-    public List<Member> getMembersInTournament(@PathVariable Long id) {
-        return tournamentService.getMembersInTournament(id);
+    @GetMapping("/{tournamentId}/members")
+    public List<Member> getMembersInTournament(@PathVariable Long tournamentId) {
+        return tournamentService.getMembersInTournament(tournamentId);
     }
 }

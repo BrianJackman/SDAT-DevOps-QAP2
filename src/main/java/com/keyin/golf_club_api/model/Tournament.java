@@ -10,6 +10,7 @@ public class Tournament {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    private String name;
     private LocalDate startDate;
     private LocalDate endDate;
     private String location;
@@ -22,7 +23,9 @@ public class Tournament {
         joinColumns = @JoinColumn(name = "tournament_id"),
         inverseJoinColumns = @JoinColumn(name = "member_id")
     )
-    private Set<Member> participatingMembers;
+    private Set<Member> members;
+
+    // Getters and setters
 
     public Long getId() {
         return id;
@@ -30,6 +33,14 @@ public class Tournament {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public LocalDate getStartDate() {
@@ -72,11 +83,11 @@ public class Tournament {
         this.cashPrize = cashPrize;
     }
 
-    public Set<Member> getParticipatingMembers() {
-        return participatingMembers;
+    public Set<Member> getMembers() {
+        return members;
     }
 
-    public void setParticipatingMembers(Set<Member> participatingMembers) {
-        this.participatingMembers = participatingMembers;
+    public void setMembers(Set<Member> members) {
+        this.members = members;
     }
 }

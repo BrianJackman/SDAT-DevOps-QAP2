@@ -5,6 +5,7 @@ import java.time.LocalDate;
 
 @Entity
 public class Member {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -14,8 +15,9 @@ public class Member {
     private String email;
     private String phone;
     private LocalDate startDate;
-    private int duration;
+    private Integer duration;
 
+    // Getters and setters
 
     public Long getId() {
         return id;
@@ -65,11 +67,11 @@ public class Member {
         this.startDate = startDate;
     }
 
-    public int getDuration() {
+    public Integer getDuration() {
         return duration;
     }
 
-    public void setDuration(int duration) {
+    public void setDuration(Integer duration) {
         this.duration = duration;
     }
 }
