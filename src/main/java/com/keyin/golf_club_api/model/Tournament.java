@@ -1,4 +1,4 @@
-package main.java.com.keyin.golf_club_api.model;
+package com.keyin.golf_club_api.model;
 
 import javax.persistence.*;
 import java.time.LocalDate;
@@ -24,7 +24,6 @@ public class Tournament {
     )
     private Set<Member> participatingMembers;
 
- 
     public Long getId() {
         return id;
     }

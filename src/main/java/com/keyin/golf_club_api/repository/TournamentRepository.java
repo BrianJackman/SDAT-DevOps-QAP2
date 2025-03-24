@@ -1,6 +1,6 @@
-package main.java.com.keyin.golf_club_api.repository;
+package com.keyin.golf_club_api.repository;
 
-import main.java.com.keyin.golf_club_api.model.Tournament;
+import com.keyin.golf_club_api.model.Tournament;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
